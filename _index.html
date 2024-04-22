@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Play&family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Опитування</title>
+</head>
+<body>
+    <div id="content">
+    <div id="start-position">
+        <h1>Адаптивність - 200</h1>
+        <div id="instruction"><p>Зараз досліджуватимуться деякі Ваші особистісні особливості. Опитувальник містить 200 тверджень (питань) про життя, роботу, відносини у сім'ї, інтереси і схильності. Ваше завдання полягає у тому, щоб визначити своє відношення до кожного ствердження, тобто погодитися або не погодитися з ним. Якщо Ви погоджуєтеся з ствердженням, то у клітці з номером даного питання ставиться „+”. Якщо Ви не згодні – ставиться „–”.
+            Правильних або неправильних відповідей тут бути не може, тому довго не замислюйтеся над питанням – давайте відповідь, виходячи з того, що більше відповідає Вашому характеру або уявленню про самого себе.</p>
+        <div><button id="start" onclick="cssBlocks();">Розпочати тестування</button></div></div>
+        
+        <table id="results"></table>
+        
+    </div>
+<div id="survey-container"></div>
+</div>
+<div id="interrupt"></div><button onclick="stopAnswers();" id="button_interrupt">Припинити тестування</button>
+ <script src="arrays_quest.js"></script>
+</body>
+</html>

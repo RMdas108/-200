@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Play&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+  <title>Адаптивність - 200</title>
+  <style>
+    h2,h3{   
+       font-size: 1.1em;
+       margin: 5px 0;
+      }
+      h2, th, td{
+        text-align: center;
+      }
+     
+      #contetnt {
+  margin: 40px 50px 40px 50px;}
+
+    #start-position{
+       padding: 0px; 
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    p{
+        margin:5px;
+    }
+    td p {
+      margin:-5px; 
+    }
+    
+    
+    .italic {font-style: italic;
+      font-size:1em;}
+      .italic:not(.prefooter) {
+        font-style: italic;
+        font-size:0.8em;
+      }
+    .w20{
+      width:20%;
+    }
+  </style>
+  <script type ="text/javascript">
+    window.onload = function() {
+        header();
+        function header(){
+    let past_name = prompt("Бажаю здоров'я! Напишіть Ваше прізвище...");
+    console.log(past_name);
+    let first_name = prompt("... напишіть, будь ласка, Ваше ім'я та по-батькові...");
+    let rank = prompt ("Напишіть, яке у Вас звання...");
+    let post = prompt("... з якого Ви військового підрозділу?");
+    let table_header = document.getElementById("table-header"); 
+// Отримати посилання на комірки таблиці за їх id
+    let _past_name = document.getElementById("past_name");
+    let _first_name = document.getElementById("first_name");
+    let _rank = document.getElementById("rank");
+    let _post = document.getElementById("post");
+    let _date = new Date();
+    let _data_date = _date.getDate();
+    let _month_date = _date.getMonth();
+    const month_array = ["січня","лютого","березня","квітня", "травня","червня","липня","серпня","вересня","жовтня","листопада","грудня"];
+    _month_date = month_array[_month_date];
+    let _year_date = _date.getFullYear();
+  let date = _data_date + " " + _month_date + " " + _year_date + " року";
+   
+// Вставити значення в комірки
+    _past_name.innerHTML = past_name;
+    _first_name.innerHTML = first_name;
+    _rank.innerHTML = rank;
+    _post.innerHTML = post;
+     _date = document.getElementsByClassName("date");
+     for (var i = 0; i < _date.length; i++) {
+      _date[i].innerHTML = date;
+}
+    _date.innerHTML = date;
+    document.getElementById("content").style.display = "block";
+
+        }}
+  </script>
+</head>
+<body>
+  <div id="content">
+    <div id="start-position">
+        <h1>Адаптивність - 200</h1>
+        <div id="instruction"><p>Зараз досліджуватимуться деякі Ваші особистісні особливості. Опитувальник містить 200 тверджень (питань) про життя, роботу, відносини у сім'ї, інтереси і схильності. Ваше завдання полягає у тому, щоб визначити своє відношення до кожного ствердження, тобто погодитися або не погодитися з ним. Якщо Ви погоджуєтеся з ствердженням, то у клітці з номером даного питання ставиться „+”. Якщо Ви не згодні – ставиться „–”.
+            Правильних або неправильних відповідей тут бути не може, тому довго не замислюйтеся над питанням – давайте відповідь, виходячи з того, що більше відповідає Вашому характеру або уявленню про самого себе.</p>
+        <div><button id="start" onclick="cssBlocks();">Розпочати тестування</button></div></div>
+    </div>
+
+</div>
+  <div id="ultimate_result">
+  <h2>Реєстраційний бланк до методики БОО "Адаптивність - 200"</h2>
+<div id="start-position">
+</div>
+<table id="table-header">
+  <tbody>
+      <tr class="bb">
+        <td class="w20">Прізвище:</td>
+        <td id="past_name"colspan="3" class="w20"></td>
+      </tr>
+      <tr class="bb">
+          <td class="w20">Ім'я, по-батькові:</td>
+          <td  id="first_name" colspan="3" class="w20"></td>
+      </tr>
+      <tr class="bb">
+          <td class="w20">Військове звання:
+          </td>
+          <td id="rank"></td>
+          <td>Підрозділ:</td>
+          <td id="post"></td>
+        </tr>
+        <tr class="bb">
+          <td class="w20">Дата проведення:
+          </td>
+          <td class="date"></td>
+          <td>Підпис:</td>
+          <td></td>
+        </tr>
+      </tbody>
+</table>
+<div>Відповіді на запитання: («ТАК» +); («НІ»&nbsp; ̶  )</div>
+<table id="results"></table>
+<h3>Результати опитування:</h3>
+<table id="main">
+  <tbody>
+    <tr>
+      <td class="w33" rowspan="2">№ з/п</td>
+      <th rowspan="2" colspan="2">Шкала</th>
+      <th colspan="3">Сирі бали</th>
+      <th class="w33" rowspan="2">Стени</th>
+      <th class="" rowspan="2">Результати</th>
+    </tr>
+    <tr class="w33">
+      <th>«+»</th>
+      <th>«-»</th>
+      <th>Σ</th>
+    </tr>
+    <tr class="bb">
+      <td></td>
+      <td class="w33" rowspan="4" style="transform: rotate(-90deg)";>Основні</td>
+      <td class="w33">Д</td>
+      <td id="dost_plus">0</td>
+      <td id="dost_minus"></td>
+      <td id="dost_sum"></td>
+      <td></td>
+      <td id="dost_text" class="expl"></td>
+    </tr>
+      <tr>
+      <td>1.</td>
+      <td>ПР</td>
+      <td id="pr_plus"></td>
+      <td id="pr_minus"></td>
+      <td id="pr_sum"></td>
+      <td id="pr_sten"></td>
+      <td id="pr_text" class="expl"></td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>КП</td>
+      <td id="kp_plus"></td>
+      <td id="kp_minus"></td>
+      <td id="kp_sum"></td>
+      <td id="kp_sten"></td>
+      <td id="kp_text" class="expl"></td>
+    </tr>   
+    <tr class="bb">
+      <td>3.</td>
+      <td>МН</td>
+      <td id="mn_plus"></td>
+      <td id="mn_minus"></td>
+      <td id="mn_sum"></td>
+      <td id="mn_sten"></td>
+      <td id="mn_text" class="expl"></td> 
+    </tr>   
+    <tr class="bb">
+      <td colspan="5" style="text-align:left; padding-left: 10px;"><b>ОАП = ПР + КП + ПН (сирі бали)</b></td>
+      <td id="oap_sum"></td>
+      <td id="oap_sten"></td>
+      <td id="oap_text" class="expl"></td> 
+    </tr>   
+    <tr>
+      <td>4.</td>
+      <td rowspan="3";  style="transform: rotate(-90deg)";><p>Додат</p><p>кові</p></td>
+      <td>ВПС</td>
+      <td id="vps_plus"></td>
+      <td id="vps_minus"></td>
+      <td id="vps_sum"></td>
+      <td id="vps_sten"></td>
+      <td id="vps_text" class="expl"></td> 
+    </tr> 
+    <tr>
+      <td>5.</td>
+      <td>ДАП</td>
+      <td id="dap_plus"></td>
+      <td id="dap_minus"></td>
+      <td id="dap_sum"></td>
+      <td id="dap_sten"></td>
+      <td id="dap_text" class="expl"></td> 
+    </tr>
+    <tr>
+      <td>6.</td>
+      <td>СР</td>     
+      <td id="sr_plus"></td>
+      <td id="sr_minus"></td>
+      <td id="sr_sum"></td>
+      <td id="sr_sten"></td>
+      <td id="sr_text" class="expl"></td> 
+    </tr>
+  </tbody>
+</table>
+<p class="prefooter">Опитування та обробку результатів провів:</p>
+<table id="footer">
+  <tbody>
+    <tr class="bb">
+    <td>майор</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>МАКСИМЧУК В.І.</td>
+  </tr>
+  <tr class="italic">
+    <td>військове звання</td>
+    <td></td>
+    <td>підпис</td>
+    <td></td>
+    <td>прізвище та ініціали</td>
+  </tr>
+</table>
+<p class="italic prefooter">Дата обробки результатів: <span class="date"></span></p>
+</div>
+<div id="survey-container"></div>
+<script src="arrays_quest.js"></script>
+</body>
+</html>
